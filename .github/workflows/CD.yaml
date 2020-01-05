@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 11.x]
+        node-version: [11.x]
     steps:
       - uses: actions/checkout@v1
       - name: Use node @ ${{ matrix.node-version }}
@@ -25,4 +25,4 @@ jobs:
           BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: dist
-          BUILD_SCRIPT: npm install && npm run build-prod
+          BUILD_SCRIPT: npm install && npm run build-dev
