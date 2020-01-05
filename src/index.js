@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app";
-import "./styles.css";
-import "./styles.scss";
+import 'bulma';
 
 
-var mountNode = document.getElementById("app");
-ReactDOM.render(<App name="Jane" />, mountNode);
+var mountNode = document.getElementById("root");
+ReactDOM.render(<App name="Janey" />, mountNode);

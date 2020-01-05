@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: [
@@ -25,7 +26,7 @@ const config = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         use: [
           'style-loader',
           'css-loader',
@@ -39,6 +40,17 @@ const config = {
             loader: 'url-loader',
             options: {
               mimetype: 'image/png'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.jpg$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              mimetype: 'image/jpg'
             }
           }
         ]
@@ -62,7 +74,11 @@ const config = {
     contentBase: './dist'
   },
   plugins: [
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      title: "Test"
+    })
   ]
 };
 
