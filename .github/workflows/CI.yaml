@@ -1,0 +1,19 @@
+name: Continuous Integration
+on: [push]
+jobs:
+  build:
+    name: Check build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 11.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use node @ ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install pkgs
+        run: npm install
+      - name: Build dev
+        run: npm run build-dev
