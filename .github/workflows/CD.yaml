@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: rebuild sass
+        run : npm rebuild node-sass --force
       - name: Install pkgs
         run: npm install
       - name: Deploy to GH pages
@@ -25,4 +27,4 @@ jobs:
           BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: dist
-          BUILD_SCRIPT: npm install && npm rebuild node-sass && npm run build-dev
+          BUILD_SCRIPT: npm run build-dev
