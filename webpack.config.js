@@ -77,6 +77,7 @@ const config = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.ico",
       title: "Test"
     })
   ]
