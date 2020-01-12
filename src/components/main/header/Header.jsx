@@ -1,6 +1,5 @@
 import React from 'react';
 import appLogo from '../../../assets/gitdrnk_logo.svg';
-import my311Logo from '../../../assets/myla_311logo.jpg';
 const defaultPhoto = 'https://avatars3.githubusercontent.com/u/3691245?v=4';
 const Header = () => (
     <div className="container hero-body">
