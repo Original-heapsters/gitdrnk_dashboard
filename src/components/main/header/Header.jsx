@@ -1,28 +1,35 @@
 import React from 'react';
 import appLogo from '../../../assets/gitdrnk_logo.svg';
-const defaultPhoto = 'https://avatars3.githubusercontent.com/u/3691245?v=4';
+import Profile from '../../Profile/Profile.jsx';
+import Login from '../../Login/Login.jsx';
+
 const Header = () => (
-    <div className="container hero-body">
+  <div className="section">
+    <div className="container">
       <div className="columns">
         <div className="column has-background-primary">
-          <div className="level">
-            <figure className="image is-96x96">
-              <img className="is-rounded" src={defaultPhoto} alt="User Component" />
-            </figure>
-          </div>
+          <Profile/>
+          <Login/>
         </div>
-        <div className="column is-three-quarters has-background-danger">
-          <div className="level">
-            <div className="level-left">
-              <strong>GITDRNK</strong>
+        <div className="column is-three-quarters">
+          <div className="columns">
+            <div className="column is-two-thirds has-background-danger">
+              <div className="level">
+                <div className="level-item has-background-primary">
+                  <strong>GITDRNK</strong>
+                </div>
+              </div>
             </div>
-            <figure className="image is-96x96">
-              <img className="is-rounded" src={appLogo} alt="Gitdrnk Logo" />
-            </figure>
+            <div className="column has-background-danger">
+              <figure className="image is-96x96">
+                <img className="is-rounded" src={appLogo} alt="Gitdrnk Logo" />
+              </figure>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 );
 
 export default Header;

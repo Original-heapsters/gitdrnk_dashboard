@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     const { name } = this.props;
     return (
-        <div className="hero">
+        <div className="container">
           <Header />
           <Body />
         </div>
