@@ -9,7 +9,7 @@ const Header = () => (
       <div className="columns">
         <div className="column has-background-primary">
           <Profile/>
-          <Login/>
+          { false && <Login/>}
         </div>
         <div className="column is-three-quarters">
           <div className="columns">

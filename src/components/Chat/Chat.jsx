@@ -1,41 +1,50 @@
 import React from 'react';
+import ChatItem from './ChatItem.jsx';
+const defaultChatItems = [
+  {
+    id: 1,
+    type: "MESSAGE",
+    timestamp: "01/01/2020 01:01:01PM",
+    text: "Chat message 1",
+    user: "User stuff",
+  },
+  {
+    id: 2,
+    type: "ACTION",
+    timestamp: "01/01/2020 01:01:01PM",
+    text: "Action message 1",
+    user: "User stuff",
+  },
+  {
+    id: 3,
+    type: "MESSAGE",
+    timestamp: "01/01/2020 01:01:01PM",
+    text: "Chat message 2",
+    user: "User stuff",
+  },
+  {
+    id: 4,
+    type: "MESSAGE",
+    timestamp: "01/01/2020 01:01:01PM",
+    text: "Chat message 3",
+    user: "User stuff",
+  },
+  {
+    id: 5,
+    type: "ACTION",
+    timestamp: "01/01/2020 01:01:01PM",
+    text: "Action message 2",
+    user: "User stuff",
+  },
+];
 export default ({}) => {
+  const chatItems = defaultChatItems.map((item) => <ChatItem content={item}/>);
+
   return (
     <div className="column is-three-quarters has-background-danger">
       <div className="container has-background-primary">
         <div className="container">
-          <div className="level">
-            <div className="level-left">
-              <div className="level-item has-background-primary">
-                Chat message 1
-              </div>
-            </div>
-          </div>
-          <div className="level">
-            <div className="level-left">
-            </div>
-            <div className="level-right has-background-danger">
-              <div className="level-item">
-                Action message 1
-              </div>
-            </div>
-          </div>
-          <div className="level">
-            <div className="level-left has-background-primary">
-              <div className="level-item">
-                Chat message 2
-              </div>
-            </div>
-          </div>
-          <div className="level">
-            <div className="level-left">
-            </div>
-            <div className="level-right has-background-danger">
-              <div className="level-item">
-                Action message 2
-              </div>
-            </div>
-          </div>
+          {defaultChatItems.map((item) => {<ChatItem content={item}/>)});}
         </div>
         <div className="container has-background-accent">
           <div className="level">
