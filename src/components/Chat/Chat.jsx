@@ -1,50 +1,19 @@
 import React from 'react';
 import ChatItem from './ChatItem.jsx';
-const defaultChatItems = [
-  {
-    id: 1,
-    type: "MESSAGE",
-    timestamp: "01/01/2020 01:01:01PM",
-    text: "Chat message 1",
-    user: "User stuff",
-  },
-  {
-    id: 2,
-    type: "ACTION",
-    timestamp: "01/01/2020 01:01:01PM",
-    text: "Action message 1",
-    user: "User stuff",
-  },
-  {
-    id: 3,
-    type: "MESSAGE",
-    timestamp: "01/01/2020 01:01:01PM",
-    text: "Chat message 2",
-    user: "User stuff",
-  },
-  {
-    id: 4,
-    type: "MESSAGE",
-    timestamp: "01/01/2020 01:01:01PM",
-    text: "Chat message 3",
-    user: "User stuff",
-  },
-  {
-    id: 5,
-    type: "ACTION",
-    timestamp: "01/01/2020 01:01:01PM",
-    text: "Action message 2",
-    user: "User stuff",
-  },
-];
+import defaultChatItems from './defaultChat';
+
 export default ({}) => {
-  const chatItems = defaultChatItems.map((item) => <ChatItem content={item}/>);
+  const chatItems = defaultChatItems.map((item) => <ChatItem key={item.id} content={item}/>);
 
   return (
     <div className="column is-three-quarters has-background-danger">
       <div className="container has-background-primary">
         <div className="container">
-          {defaultChatItems.map((item) => {<ChatItem content={item}/>)});}
+          <div className="list">
+            {
+              chatItems
+            }
+          </div>
         </div>
         <div className="container has-background-accent">
           <div className="level">
@@ -60,3 +29,10 @@ export default ({}) => {
     </div>
   );
 }
+
+
+  // {defaultChatItems.map((item) => {
+  //   <div className="list-item">
+  //     <ChatItem content={item}/>
+  //   </div>
+  // })}
