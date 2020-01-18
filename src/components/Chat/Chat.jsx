@@ -10,9 +10,7 @@ export default ({}) => {
       <div className="container has-background-primary">
         <div className="container">
           <div className="list">
-            {
-              chatItems
-            }
+            { chatItems }
           </div>
         </div>
         <div className="container has-background-accent">
@@ -29,10 +27,3 @@ export default ({}) => {
     </div>
   );
 }
-
-
-  // {defaultChatItems.map((item) => {
-  //   <div className="list-item">
-  //     <ChatItem content={item}/>
-  //   </div>
-  // })}
