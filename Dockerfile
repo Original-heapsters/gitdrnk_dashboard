@@ -1,4 +1,6 @@
-FROM node:12.2.0-alpine
+FROM node:12.2.0-alpine as build
+
+RUN npm install webpack -g
 
 WORKDIR /app
 
@@ -10,4 +12,12 @@ RUN npm install --silent
 
 COPY . .
 
-CMD ["npm", "start"]
+RUN npm run build-prod
+
+FROM nginx:1.13.12-alpine
+
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
