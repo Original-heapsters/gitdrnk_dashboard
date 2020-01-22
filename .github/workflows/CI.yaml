@@ -20,3 +20,5 @@ jobs:
         run: npm install
       - name: Build dev
         run: npm run build-dev
+      - name: Build docker image
+        run: docker build .
