@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import appLogo from '../../../assets/gitdrnk_logo.svg';
 import Profile from '../../Profile/Profile.jsx';
 import Login from '../../Login/Login.jsx';
@@ -9,7 +10,9 @@ const Header = () => (
       <div className="columns">
         <div className="column has-background-primary">
           <Profile/>
-          { false && <Login/>}
+          <a className="button" href='http://localhost:5000/auth/github'>
+            Login with github
+          </a>
         </div>
         <div className="column is-three-quarters">
           <div className="columns">
