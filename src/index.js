@@ -1,11 +1,13 @@
+import App from "./app";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app";
-import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import rootReducer from './reducers'
+import { Provider } from 'react-redux'
 import 'bulma';
 
+import gitdrnkReducer from './reducers/reducers'
+
+const store = createStore(gitdrnkReducer)
 
 var mountNode = document.getElementById("root");
 ReactDOM.render(
