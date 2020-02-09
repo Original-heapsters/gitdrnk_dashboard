@@ -10,9 +10,6 @@ const Header = () => (
       <div className="columns">
         <div className="column has-background-primary">
           <Profile/>
-          <a className="button" href='http://localhost:5000/auth/github'>
-            Login with github
-          </a>
         </div>
         <div className="column is-three-quarters">
           <div className="columns">
