@@ -1,6 +1,6 @@
 FROM node:12.2.0-alpine as build
 
-RUN npm install webpack -g
+RUN npm install webpack
 
 WORKDIR /app
 
